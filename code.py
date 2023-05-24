@@ -2,12 +2,14 @@ import time
 import board
 import digitalio
 from digitalio import DigitalInOut
-import adafruit_esp32spi.adafruit_esp32spi_socket as socket
 import adafruit_minimqtt.adafruit_minimqtt as MQTT
 import os, ssl, wifi, socketpool
 
 # gets setting from the toml file included
 wifi.radio.connect(os.getenv("WIFI_SSID"), os.getenv("WIFI_PASSWORD"))
+
+# Create a socket pool
+pool = socketpool.SocketPool(wifi.radio)
 
 print("Connected to WIFI")
 
@@ -21,9 +23,6 @@ MQTT_TOPIC = os.getenv("MQTT_TOPIC")
 # LED pins on the pico W
 led_pin = digitalio.DigitalInOut(board.LED)
 led_pin.direction = digitalio.Direction.OUTPUT
-
-# Create a socket pool
-pool = socketpool.SocketPool(wifi.radio)
 
 # Initialize MiniMQTT
 mqtt_client = MQTT.MQTT(
