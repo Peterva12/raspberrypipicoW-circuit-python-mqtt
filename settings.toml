@@ -1,0 +1,3 @@
+WIFI_SSID="ASU1S"
+WIFI_PASSWORD='dont4get123'
+test_variable="Successfully Read from settings.toml. Woo Hoo!"
