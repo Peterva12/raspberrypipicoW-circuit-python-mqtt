@@ -1,0 +1,6 @@
+WIFI_SSID="Your WIFI SSID"
+WIFI_PASSWORD="WIFI PASSWORD"
+test_variable="Successfully Read from settings.toml. Woo Hoo!" # test that I used to to read the toml file
+MQTT_USERNAME="Your MQTT USERNAME"
+MQTT_PASSWORD ="YOUR PASSWORD"
+MQTT_TOPIC ="pico/led/control" # can call this whatever you want when you set it up in the broker
